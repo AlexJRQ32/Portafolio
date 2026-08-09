@@ -1,6 +1,7 @@
 import { Topbar } from "./Components/Topbar/Topbar"
 import { Hero } from "./Components/Hero/Hero"
 import { About } from "./Components/About/About"
+import { Skills } from "./Components/Skills/Skills"
 import './App.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Topbar />
       <Hero />
       <About />
+      <Skills />
     </main>
   )
 }
