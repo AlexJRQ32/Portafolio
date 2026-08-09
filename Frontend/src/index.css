@@ -1,0 +1,197 @@
+:root {
+  /* 
+    =============================================
+    Minimalist Personal Portfolio
+    Design System: Obsidian Flux (Google Stitch)
+    Dark-first · Glassmorphism · High-Contrast
+    ============================================= 
+  */
+
+  /* Canvas y Fondos */
+  --bg-canvas: #0b0b0f;
+  --bg-canvas-rgb: 11, 11, 15;
+  --bg-primary: #131317;
+  --bg-primary-rgb: 19, 19, 23;
+  --bg-card: #1f1f23;
+  --bg-card-rgb: 31, 31, 35;
+  --bg-card-hover: #2a2a2e;
+  --bg-card-hover-rgb: 42, 42, 46;
+  --bg-surface-lowest: #0e0e12;
+  --bg-surface-lowest-rgb: 14, 14, 18;
+  --bg-surface-low: #1b1b1f;
+  --bg-surface-low-rgb: 27, 27, 31;
+  --bg-surface-highest: #353439;
+  --bg-surface-highest-rgb: 53, 52, 57;
+  --bg-bright: #39393d;
+  --bg-bright-rgb: 57, 57, 61;
+
+  /* Primary (Electric Violet) */
+  --primary: #8b5cf6;
+  --primary-rgb: 139, 92, 246;
+  --primary-hover: #7c4df0;
+  --primary-hover-rgb: 124, 77, 240;
+  --primary-container: #a078ff;
+  --primary-container-rgb: 160, 120, 255;
+  --primary-light: #a78bfa;
+  --primary-light-rgb: 167, 139, 250;
+  --on-primary: #3c0091;
+  --on-primary-rgb: 60, 0, 145;
+  --on-primary-container: #340080;
+  --on-primary-container-rgb: 52, 0, 128;
+
+  /* Secondary (Azure Blue) */
+  --secondary: #3b82f6;
+  --secondary-rgb: 59, 130, 246;
+  --secondary-container: #0566d9;
+  --secondary-container-rgb: 5, 102, 217;
+  --on-secondary: #002e6a;
+  --on-secondary-rgb: 0, 46, 106;
+  --on-secondary-container: #e6ecff;
+  --on-secondary-container-rgb: 230, 236, 255;
+
+  /* Tertiary (Cyan) */
+  --tertiary: #06b6d4;
+  --tertiary-rgb: 6, 182, 212;
+  --tertiary-container: #009eb9;
+  --tertiary-container-rgb: 0, 158, 185;
+  --on-tertiary: #003640;
+  --on-tertiary-rgb: 0, 54, 64;
+  --on-tertiary-container: #002f38;
+  --on-tertiary-container-rgb: 0, 47, 56;
+
+  /* Textos */
+  --text-primary: #e3e2e6;
+  --text-primary-rgb: 227, 226, 230;
+  --text-secondary: #c4c6d0;
+  --text-secondary-rgb: 196, 198, 208;
+  --text-muted: #8e9099;
+  --text-muted-rgb: 142, 144, 153;
+  --text-disabled: #44474f;
+  --text-disabled-rgb: 68, 71, 79;
+
+  /* Bordes y Outlines */
+  --border-color: #44474f;
+  --border-color-rgb: 68, 71, 79;
+  --border-strong: #8e9099;
+  --border-strong-rgb: 142, 144, 153;
+  --outline-variant: #494454;
+  --outline-variant-rgb: 73, 68, 84;
+
+  /* Estados (Error / Éxito) */
+  --error: #ffb4ab;
+  --error-rgb: 255, 180, 171;
+  --error-container: #93000a;
+  --error-container-rgb: 147, 0, 10;
+  --on-error: #690005;
+  --on-error-rgb: 105, 0, 5;
+  --on-error-container: #ffdad6;
+  --on-error-container-rgb: 255, 218, 214;
+
+  /* Acentos de Estadísticas */
+  --accent-purple: #8b5cf6;
+  --accent-purple-rgb: 139, 92, 246;
+  --accent-blue: #3b82f6;
+  --accent-blue-rgb: 59, 130, 246;
+  --accent-green: #10b981;
+  --accent-green-rgb: 16, 185, 129;
+  --accent-yellow: #f59e0b;
+  --accent-yellow-rgb: 245, 158, 11;
+
+  /* Tokens Material (Ref. Obsidian Flux) */
+  --ref-primary: #d0bcff;
+  --ref-primary-rgb: 208, 188, 255;
+  --ref-primary-fixed: #e9ddff;
+  --ref-primary-fixed-rgb: 233, 221, 255;
+  --ref-inverse-primary: #6d3bd7;
+  --ref-inverse-primary-rgb: 109, 59, 215;
+  --ref-secondary: #adc6ff;
+  --ref-secondary-rgb: 173, 198, 255;
+  --ref-secondary-fixed: #d8e2ff;
+  --ref-secondary-fixed-rgb: 216, 226, 255;
+  --ref-tertiary: #4cd7f6;
+  --ref-tertiary-rgb: 76, 215, 246;
+  --ref-tertiary-fixed: #acedff;
+  --ref-tertiary-fixed-rgb: 172, 237, 255;
+  --ref-inverse-surface: #e4e1e7;
+  --ref-inverse-surface-rgb: 228, 225, 231;
+  --ref-inverse-on-surface: #303034;
+  --ref-inverse-on-surface-rgb: 48, 48, 52;
+  --ref-surface-tint: #d0bcff;
+  --ref-surface-tint-rgb: 208, 188, 255;
+  --ref-outline: #958ea0;
+  --ref-outline-rgb: 149, 142, 160;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(31, 31, 35, 0.6);
+  --glass-border: rgba(68, 71, 79, 0.5);
+  --glass-blur: 12px;
+  --glass-card-bg: rgba(255, 255, 255, 0.03);
+  --glass-card-border: rgba(255, 255, 255, 0.1);
+
+  /* Gradientes */
+  --gradient-text: linear-gradient(to right, #a78bfa, #8b5cf6);
+  --gradient-primary: linear-gradient(45deg, #8b5cf6, #3b82f6);
+  --gradient-hero-glow: radial-gradient(circle at center, rgba(139, 92, 246, 0.2) 0%, rgba(19, 19, 23, 0) 70%);
+  --gradient-border: linear-gradient(to bottom, rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0));
+  --gradient-orb-primary: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%);
+  --gradient-orb-secondary: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
+
+  /* Sombras y Glows */
+  --glow-purple: rgba(124, 92, 255, 0.15);
+  --glow-primary: 0 0 20px rgba(139, 92, 246, 0.4);
+  --glow-primary-soft: 0 0 15px rgba(139, 92, 246, 0.3);
+  --glow-text: 0 0 20px rgba(139, 92, 246, 0.5);
+  --shadow-soft: 0 0 20px rgba(0, 0, 0, 0.12);
+
+  /* Radios */
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Espaciado (base 8px) */
+  --space-xs: 4px;
+  --space-base: 8px;
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  --gutter: 24px;
+  --container-max: 1280px;
+
+  /* Tipografía */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+  --fs-display-xl: 72px;
+  --fs-display-lg: 48px;
+  --fs-headline-lg: 32px;
+  --fs-headline-md: 24px;
+  --fs-body-lg: 18px;
+  --fs-body-md: 16px;
+  --fs-label-md: 14px;
+  --fs-label-sm: 12px;
+  --fw-display-xl: 800;
+  --fw-display-lg: 700;
+  --fw-headline: 700;
+  --fw-body: 400;
+  --fw-label: 500;
+  --lh-display-xl: 80px;
+  --lh-display-lg: 56px;
+  --lh-headline: 40px;
+  --lh-body: 24px;
+
+  /* Transiciones */
+  --transition-base: 300ms ease-out;
+  --transition-fast: 150ms ease;
+  --transition-transform: 300ms ease-out;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'plus-jakarta-sans';
+}
