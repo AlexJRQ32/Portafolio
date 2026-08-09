@@ -1,11 +1,9 @@
 :root {
-  /* 
-    =============================================
-    Minimalist Personal Portfolio
-    Design System: Obsidian Flux (Google Stitch)
-    Dark-first · Glassmorphism · High-Contrast
-    ============================================= 
-  */
+  /* =============================================
+     Portafolio Alex - Obsidian Flux (colores)
+     Estilo FlowBank (layout/navbar/tipografía)
+     Dark-first · Glassmorphism · Serif + Sans
+     ============================================= */
 
   /* Canvas y Fondos */
   --bg-canvas: #0b0b0f;
@@ -77,7 +75,7 @@
   --outline-variant: #494454;
   --outline-variant-rgb: 73, 68, 84;
 
-  /* Estados (Error / Éxito) */
+  /* Estados */
   --error: #ffb4ab;
   --error-rgb: 255, 180, 171;
   --error-container: #93000a;
@@ -127,6 +125,7 @@
   --glass-blur: 12px;
   --glass-card-bg: rgba(255, 255, 255, 0.03);
   --glass-card-border: rgba(255, 255, 255, 0.1);
+  --glass-navbar: rgba(31, 31, 35, 0.6);
 
   /* Gradientes */
   --gradient-text: linear-gradient(to right, #a78bfa, #8b5cf6);
@@ -142,6 +141,7 @@
   --glow-primary-soft: 0 0 15px rgba(139, 92, 246, 0.3);
   --glow-text: 0 0 20px rgba(139, 92, 246, 0.5);
   --shadow-soft: 0 0 20px rgba(0, 0, 0, 0.12);
+  --shadow-navbar: 0 4px 20px rgba(0, 0, 0, 0.1);
 
   /* Radios */
   --radius-sm: 0.25rem;
@@ -159,30 +159,30 @@
   --space-lg: 48px;
   --space-xl: 80px;
   --gutter: 24px;
-  --container-max: 1280px;
+  --container-max: 1200px;
 
   /* Tipografía */
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Fraunces', 'Plus Jakarta Sans', serif;
   --font-body: 'Inter', sans-serif;
   --font-label: 'Inter', sans-serif;
   --font-code: 'JetBrains Mono', monospace;
   --fs-display-xl: 72px;
-  --fs-display-lg: 48px;
-  --fs-headline-lg: 32px;
-  --fs-headline-md: 24px;
+  --fs-display-lg: 56px;
+  --fs-headline-lg: 40px;
+  --fs-headline-md: 28px;
   --fs-body-lg: 18px;
   --fs-body-md: 16px;
   --fs-label-md: 14px;
   --fs-label-sm: 12px;
-  --fw-display-xl: 800;
-  --fw-display-lg: 700;
-  --fw-headline: 700;
+  --fw-display-xl: 700;
+  --fw-display-lg: 600;
+  --fw-headline: 600;
   --fw-body: 400;
   --fw-label: 500;
-  --lh-display-xl: 80px;
-  --lh-display-lg: 56px;
-  --lh-headline: 40px;
-  --lh-body: 24px;
+  --lh-display-xl: 1.05;
+  --lh-display-lg: 1.08;
+  --lh-headline: 1.2;
+  --lh-body: 1.7;
 
   /* Transiciones */
   --transition-base: 300ms ease-out;
@@ -190,8 +190,13 @@
   --transition-transform: 300ms ease-out;
 }
 
-body{
+
+body {
   margin: 0;
   padding: 0;
-  font-family: 'plus-jakarta-sans';
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
 }
+

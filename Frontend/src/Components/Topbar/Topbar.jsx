@@ -5,11 +5,9 @@ export function Topbar() {
     <>
       <section className='topbar'>
         <div className='logo'>
-          <svg className='logo-icon' fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-          </svg>
+          <i className="fa-solid fa-code logo-icon" />
           <p>
-            CleanCode
+            CodeCraft
           </p>
         </div>
         <nav className='navbar'>
@@ -46,7 +44,7 @@ export function Topbar() {
             </li>
           </ul>
         </nav>
-        <button className='btn-purple'>
+        <button className='btn-hire'>
           Hire Me
         </button>
       </section>
