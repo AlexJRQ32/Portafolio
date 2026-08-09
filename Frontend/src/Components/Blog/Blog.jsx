@@ -1,44 +1,45 @@
 import { useState } from 'react'
 import './Blog.css'
+import { Reveal } from '../ui/Reveal/Reveal'
 
 const POSTS = [
   {
     id: "01",
     tag: "Frontend",
-    title: "Lo que aprendí construyendo mi primer proyecto con React",
+    title: "What I learned building my first project with React",
     readTime: "4 min",
     color: "#61dafb",
     body: [
-      "Mi primer acercamiento real a React fue construyendo FlowBank, una app para administrar fechas de corte y pago de tarjetas. Antes solo conocía HTML, CSS y JavaScript vanilla, y el salto a componentes fue más grande de lo que esperaba.",
-      "Lo primero que entendí fue la diferencia entre props y estado. Las props son datos que el padre le pasa al hijo (y que no se deben mutar), mientras que el estado es información interna del componente que sí cambia con la interacción del usuario. Mezclarlos al principio genera bugs confusos: un componente que recibe datos por props y los modifica directamente nunca se comporta como esperás.",
-      "El segundo aprendizaje fue la arquitectura por features. En vez de una carpeta de 'components' gigante, organicé el código por módulos: dashboard, tarjetas, facturas, cada uno con sus componentes, hooks y servicios. Esto hizo que cuando la app creció, no me perdiera.",
-      "También aprendí que el estado global no es la primera opción. React tiene su propio estado local y el context para casos puntuales; cargar todo en un store global solo complica el código innecesariamente.",
+      "My first real approach to React was building FlowBank, an app to manage credit card billing and payment dates. Before that I only knew HTML, CSS and vanilla JavaScript, and the jump to components was bigger than I expected.",
+      "The first thing I understood was the difference between props and state. Props are data the parent passes to the child (and shouldn't be mutated), while state is internal component information that changes with user interaction. Mixing them up at first creates confusing bugs: a component that receives data via props and modifies it directly never behaves the way you expect.",
+      "The second lesson was feature-based architecture. Instead of a giant 'components' folder, I organized the code into modules: dashboard, cards, invoices, each with its own components, hooks and services. This made the app easy to navigate as it grew.",
+      "I also learned that global state is not the first option. React has its own local state and context for specific cases; loading everything into a global store only complicates the code unnecessarily.",
     ],
   },
   {
     id: "02",
     tag: "Backend",
-    title: "Entendiendo las capas en una API con .NET",
+    title: "Understanding layers in a .NET API",
     readTime: "6 min",
     color: "#512bd4",
     body: [
-      "Cuando empecé con .NET, mi instinto era poner todo en el controlador: validaciones, acceso a datos, reglas de negocio. El resultado fue un código imposible de probar y de mantener. La solución fue entender la arquitectura en capas.",
-      "Separé el proyecto en tres: Core, Data y WebAPI. Core contiene las entidades del dominio (como Tarjeta o Factura) y las reglas de negocio puras, sin saber nada de bases de datos. Data se encarga del acceso a datos con Entity Framework Core: el DbContext, los repositorios y las migraciones. WebAPI expone los endpoints HTTP y se comunica con las capas internas.",
-      "La regla que me cambió: las capas solo dependen hacia adentro. WebAPI conoce a Data y Core, Data conoce a Core, pero Core no conoce a nadie. Así, si mañana cambio de SQL Server a otra base, solo toco la capa Data.",
-      "También aprendí la inyección de dependencias. En vez de crear instancias con 'new' dentro de cada clase, registro los servicios en el contenedor y los recibo por el constructor. Esto facilita las pruebas y el mantenimiento.",
+      "When I started with .NET, my instinct was to put everything in the controller: validation, data access, business rules. The result was code that was impossible to test and maintain. The solution was understanding layered architecture.",
+      "I split the project into three: Core, Data and WebAPI. Core contains the domain entities (like Card or Invoice) and pure business rules, without knowing anything about databases. Data handles data access with Entity Framework Core: the DbContext, repositories and migrations. WebAPI exposes the HTTP endpoints and communicates with the inner layers.",
+      "The rule that changed me: layers only depend inward. WebAPI knows about Data and Core, Data knows about Core, but Core knows nobody. So if tomorrow I switch from SQL Server to another database, I only touch the Data layer.",
+      "I also learned dependency injection. Instead of creating instances with 'new' inside each class, I register services in the container and receive them through the constructor. This makes testing and maintenance easier.",
     ],
   },
   {
     id: "03",
-    tag: "Bases de datos",
-    title: "Modelado de datos: de la idea al diagrama",
+    tag: "Databases",
+    title: "Data modeling: from idea to diagram",
     readTime: "5 min",
     color: "#cc2927",
     body: [
-      "El modelado de datos es la base de cualquier aplicación, y aprender a hacerlo bien me ahorró muchísimas horas de arreglos después. El proceso empieza antes de escribir SQL: se trata de entender qué entidades existen y cómo se relacionan.",
-      "Para OpenPaw, el carnet de mascotas, empecé listando las entidades: Usuario, Mascota, Especie, Raza, Servicio, Reseña. Después definí las relaciones: un usuario tiene muchas mascotas, una mascota pertenece a una especie y a una raza, un servicio pertenece a un usuario y puede tener muchas reseñas.",
-      "Aprendí a decidir entre 1 a 1, 1 a muchos y muchos a muchos. Un error común es agregar una relación muchos a muchos donde alcanza con una de uno a muchos, o al revés: meter campos repetidos en una tabla en vez de normalizar.",
-      "Por último, entendí el valor de las migraciones. Con Entity Framework Core, cada cambio del modelo se convierte en una migración versionada, lo que permite evolucionar la base de datos sin perder datos ni romper lo que ya funciona.",
+      "Data modeling is the foundation of any application, and learning to do it well saved me tons of hours of fixing things later. The process starts before writing SQL: it's about understanding what entities exist and how they relate.",
+      "For OpenPaw, the pet card, I started by listing the entities: User, Pet, Species, Breed, Service, Review. Then I defined the relationships: a user has many pets, a pet belongs to a species and a breed, a service belongs to a user and can have many reviews.",
+      "I learned to decide between 1 to 1, 1 to many and many to many. A common mistake is adding a many-to-many relationship where a one-to-many is enough, or the opposite: putting repeated fields in a table instead of normalizing.",
+      "Finally, I understood the value of migrations. With Entity Framework Core, every model change becomes a versioned migration, letting the database evolve without losing data or breaking what already works.",
     ],
   },
 ]
@@ -69,7 +70,7 @@ function Post({ post }) {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
         >
-          {open ? "Leer menos" : "Leer más"}
+          {open ? "Read less" : "Read more"}
           <i className={`fa-solid fa-chevron-down${open ? " blog-card__toggle--open" : ""}`} />
         </button>
       </div>
@@ -81,14 +82,18 @@ export function Blog() {
   return (
     <section className="blog" id="blog">
       <div className="blog-container">
-        <div className="blog-head">
-          <p className="blog-kicker">Blog</p>
-          <h2 className="blog-title">Notes From My Learning</h2>
-        </div>
+        <Reveal>
+          <div className="blog-head">
+            <p className="blog-kicker">Blog</p>
+            <h2 className="blog-title">Notes From My Learning</h2>
+          </div>
+        </Reveal>
 
         <div className="blog-grid">
-          {POSTS.map((p) => (
-            <Post key={p.id} post={p} />
+          {POSTS.map((p, i) => (
+            <Reveal key={p.id} delay={i * 0.1}>
+              <Post post={p} />
+            </Reveal>
           ))}
         </div>
       </div>

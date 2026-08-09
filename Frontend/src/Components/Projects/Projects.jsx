@@ -1,11 +1,12 @@
 import './Projects.css'
+import { Reveal } from '../ui/Reveal/Reveal'
 
 const PROJECTS = [
   {
     id: "01",
     title: "FlowBank",
     description:
-      "Gestión de fechas de corte y pago de tarjetas de crédito en un solo lugar. Registra tarjetas, escanea facturas y recibe alertas antes de cada fecha.",
+      "Manage credit card billing and payment dates in one place. Register cards, scan invoices and get alerts before each due date.",
     stack: ["devicon-react-original", "devicon-dotnetcore-plain"],
     url: "https://flowbank-three.vercel.app",
   },
@@ -13,7 +14,7 @@ const PROJECTS = [
     id: "02",
     title: "OpenPaw",
     description:
-      "Plataforma de servicios veterinarios y cuidado de mascotas, desarrollada en equipo con metodología Scrum y Azure DevOps.",
+      "Platform for veterinary services and pet care, built as a team using Scrum methodology and Azure DevOps.",
     stack: ["devicon-react-original", "devicon-dotnetcore-plain", "devicon-azuredevops-plain"],
     url: "https://openpaw-devs.vercel.app",
   },
@@ -21,7 +22,7 @@ const PROJECTS = [
     id: "03",
     title: "RappiDoz",
     description:
-      "Aplicación de delivery y pedidos para el curso de Diseño de Sistemas, con backend en ASP.NET y SQL Server.",
+      "Delivery and ordering app built for the Systems Design course, with an ASP.NET and SQL Server backend.",
     stack: ["devicon-dotnetcore-plain"],
     url: "https://github.com/AlexJRQ32/RappiDozApp",
   },
@@ -31,14 +32,17 @@ export function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
-        <div className="projects-head">
-          <p className="projects-kicker">Featured Projects</p>
-          <h2 className="projects-title">Some of My Recent Work</h2>
-        </div>
+        <Reveal>
+          <div className="projects-head">
+            <p className="projects-kicker">Featured Projects</p>
+            <h2 className="projects-title">Some of My Recent Work</h2>
+          </div>
+        </Reveal>
 
         <div className="projects-grid">
-          {PROJECTS.map((p) => (
-            <article key={p.id} className="project-card">
+          {PROJECTS.map((p, i) => (
+            <Reveal key={p.id} delay={i * 0.1}>
+              <article className="project-card">
               <span className="project-card__num">{p.id}</span>
 
               <div className="project-card__head">
@@ -65,7 +69,8 @@ export function Projects() {
                 View Project
                 <i className="fa-solid fa-arrow-up-right-from-square" />
               </a>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

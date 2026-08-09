@@ -5,9 +5,11 @@ export function Topbar() {
     <>
       <section className='topbar'>
         <div className='logo'>
-          <i className="fa-solid fa-code logo-icon" />
+          <span className='logo-badge'>
+            <i className="fa-solid fa-rocket logo-icon" />
+          </span>
           <p>
-            CodeCraft
+            Alex Roblero
           </p>
         </div>
         <nav className='navbar'>
@@ -44,9 +46,9 @@ export function Topbar() {
             </li>
           </ul>
         </nav>
-        <button className='btn-hire'>
+        <a href="#contact" className='btn-hire'>
           Hire Me
-        </button>
+        </a>
       </section>
     </>
   )
