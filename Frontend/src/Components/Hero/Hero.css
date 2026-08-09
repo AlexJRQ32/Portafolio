@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 80px;
+  padding: 80px 0 96px;
 }
 
 .hero-glow {
@@ -176,6 +176,7 @@
 
 .tech-stack {
   padding-top: 32px;
+  padding-bottom: 16px;
   width: 100%;
 }
 
@@ -204,7 +205,7 @@
 
 .tech-icon i {
   font-size: 24px;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .tech-icon span {

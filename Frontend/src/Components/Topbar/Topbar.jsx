@@ -13,32 +13,32 @@ export function Topbar() {
         <nav className='navbar'>
           <ul>
             <li>
-              <a href="#">
+              <a href="#home">
                 Home
               </a>
             </li>
             <li>
-              <a href="#About">
+              <a href="#about">
                 About
               </a>
             </li>
             <li>
-              <a href="#Skills">
+              <a href="#skills">
                 Skills
               </a>
             </li>
             <li>
-              <a href="#Projects">
+              <a href="#projects">
                 Projects
               </a>
             </li>
             <li>
-              <a href="#Blog">
+              <a href="#blog">
                 Blog
               </a>
             </li>
             <li>
-              <a href="#Contact">
+              <a href="#contact">
                 Contact
               </a>
             </li>

@@ -2,7 +2,7 @@ import './Hero.css'
 
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-glow" />
       <div className="hero-container">
         <div className="hero-grid">
