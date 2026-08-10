@@ -10,17 +10,12 @@
   padding: 0 var(--gutter);
 }
 
+/* Desktop: 2 columnas por defecto */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .about-kicker {
@@ -33,20 +28,15 @@
   letter-spacing: 0.15em;
 }
 
+/* Desktop: titulo grande */
 .about-title {
   margin: 0 0 24px 0;
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
-}
-
-@media (min-width: 1024px) {
-  .about-title {
-    font-size: 48px;
-  }
 }
 
 .about-text {
@@ -77,6 +67,7 @@
   border-color: var(--primary);
 }
 
+/* Desktop: stats 2 columnas */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,4 +141,66 @@
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.4;
+}
+
+/* ============================================================================
+ * Responsive - convencion desktop-first (max-width)
+ * ============================================================================ */
+
+/* Tablet (768px): 1 columna, titulos mas pequenos */
+@media (max-width: 768px) {
+  .about {
+    padding: 56px 0;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-title {
+    font-size: 32px;
+  }
+  .stats-grid {
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+  .stat-value {
+    font-size: 24px;
+  }
+}
+
+/* Mobile (500px): compactar stats para 2 columnas */
+@media (max-width: 500px) {
+  .stats-grid {
+    gap: 10px;
+  }
+  .stat-card {
+    padding: 12px;
+    gap: 10px;
+  }
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+  .stat-value {
+    font-size: 20px;
+  }
+  .stat-label {
+    font-size: 11px;
+  }
+}
+
+/* Tiny (320px): stats 1 columna solo en pantallas muy pequenas */
+@media (max-width: 320px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
 }

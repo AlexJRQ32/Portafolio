@@ -37,19 +37,13 @@
   letter-spacing: -0.02em;
 }
 
+/* Desktop: 2 columnas por defecto */
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
   max-width: 900px;
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 48px;
-  }
 }
 
 .skill-item {
@@ -102,4 +96,25 @@
 
 @keyframes skillFill {
   from { width: 0; }
+}
+
+/* ============================================================================
+ * Responsive - convencion desktop-first (max-width)
+ * ============================================================================ */
+
+/* Mobile pequeno (400px): 1 columna */
+@media (max-width: 400px) {
+  .skills {
+    padding: 56px 0;
+  }
+  .skills-title {
+    font-size: 28px;
+  }
+  .skills-head {
+    margin-bottom: 32px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }

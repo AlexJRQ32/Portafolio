@@ -63,7 +63,7 @@ function Post({ post }) {
       </div>
 
       <div className="blog-card__meta">
-        <span>{post.readTime} de lectura</span>
+        <span>{post.readTime} read</span>
         <button
           type="button"
           className="blog-card__toggle"

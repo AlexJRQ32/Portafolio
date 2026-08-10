@@ -83,9 +83,7 @@ export function Contact() {
 
         <div className="contact-bottom">
           <p>© {new Date().getFullYear()} Alex Roblero. All rights reserved.</p>
-          <p>
-            Built with <i className="fa-solid fa-heart" /> in San José, Costa Rica
-          </p>
+          <p>Designed &amp; developed by Alex Roblero — San José, Costa Rica</p>
         </div>
       </div>
     </footer>

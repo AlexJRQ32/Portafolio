@@ -47,7 +47,7 @@ export function Hero() {
                   View My Work
                   <i className="fa-solid fa-arrow-right-long" />
                 </a>
-                <a className="btn-glass" href="#">
+                <a className="btn-glass" href="/cv-alex-roblero.pdf" download="CV - Alex Roblero.pdf">
                   Download CV
                   <i className="fa-solid fa-download" />
                 </a>

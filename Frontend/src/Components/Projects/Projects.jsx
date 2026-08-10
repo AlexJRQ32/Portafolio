@@ -8,7 +8,8 @@ const PROJECTS = [
     description:
       "Manage credit card billing and payment dates in one place. Register cards, scan invoices and get alerts before each due date.",
     stack: ["devicon-react-original", "devicon-dotnetcore-plain"],
-    url: "https://flowbank-three.vercel.app",
+    deployUrl: "https://flowbank-three.vercel.app",
+    repoUrl: "https://github.com/AlexJRQ32/FlowBank",
   },
   {
     id: "02",
@@ -16,7 +17,8 @@ const PROJECTS = [
     description:
       "Platform for veterinary services and pet care, built as a team using Scrum methodology and Azure DevOps.",
     stack: ["devicon-react-original", "devicon-dotnetcore-plain", "devicon-azuredevops-plain"],
-    url: "https://openpaw-devs.vercel.app",
+    deployUrl: "https://openpaw-devs.vercel.app",
+    repoUrl: "https://github.com/AlexJRQ32",
   },
   {
     id: "03",
@@ -24,7 +26,8 @@ const PROJECTS = [
     description:
       "Delivery and ordering app built for the Systems Design course, with an ASP.NET and SQL Server backend.",
     stack: ["devicon-dotnetcore-plain"],
-    url: "https://github.com/AlexJRQ32/RappiDozApp",
+    deployUrl: null,
+    repoUrl: "https://github.com/AlexJRQ32/RappiDozApp",
   },
 ]
 
@@ -65,10 +68,20 @@ export function Projects() {
                 )}
               </div>
 
-              <a className="project-card__link" href={p.url} target="_blank" rel="noreferrer">
-                View Project
-                <i className="fa-solid fa-arrow-up-right-from-square" />
-              </a>
+              <div className="project-card__links">
+                {p.deployUrl && (
+                  <a className="project-card__link project-card__link--deploy" href={p.deployUrl} target="_blank" rel="noreferrer">
+                    Live App
+                    <i className="fa-solid fa-globe" />
+                  </a>
+                )}
+                {p.repoUrl && (
+                  <a className="project-card__link" href={p.repoUrl} target="_blank" rel="noreferrer">
+                    {p.title === "OpenPaw" ? "GitHub" : "Repo"}
+                    <i className="fa-brands fa-github" />
+                  </a>
+                )}
+              </div>
               </article>
             </Reveal>
           ))}
