@@ -22,6 +22,11 @@
   transform: none;
 }
 
+/* Elementos ya visibles al montar: sin transicion (aparecen directo) */
+.reveal--instant {
+  transition: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;

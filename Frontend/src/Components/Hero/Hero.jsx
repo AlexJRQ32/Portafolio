@@ -1,43 +1,29 @@
 import './Hero.css'
 import { Reveal } from '../ui/Reveal/Reveal'
-
-const TECH = [
-  "devicon-javascript-plain",
-  "devicon-css3-plain",
-  "devicon-html5-plain",
-  "devicon-git-plain",
-  "devicon-react-original",
-  "devicon-csharp-plain",
-  "devicon-dotnetcore-plain",
-]
+import { ArrowRight, Download } from '@phosphor-icons/react'
 
 export function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="hero-glow" />
       <div className="hero-container">
         <div className="hero-grid">
           <div className="hero-content">
             <Reveal>
-              <div className="badge-hero">
-                <span className="badge-dot" />
-                <p>Frontend &amp; Full-stack Developer</p>
-              </div>
+              <p className="hero-badge">Frontend &amp; Full-stack Developer</p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className="hero-title">
-                Hi, I'm <span className="gradient-text glow-text">Alex Roblero</span>
+                Hi, I'm <span className="hero-name">Alex Roblero</span>
                 <br />
-                I build things for the web.
+                I build web apps <span className="hero-accent">end to end</span>.
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="info">
+              <p className="hero-sub">
                 Systems Engineering student at Universidad Hispanoamericana.
-                I'm passionate about frontend and interface design: I build complete
-                web applications, from the data model to deployment.
+                I build complete web apps, from database to deployment.
               </p>
             </Reveal>
 
@@ -45,60 +31,18 @@ export function Hero() {
               <div className="hero-actions">
                 <a className="btn-primary" href="#projects">
                   View My Work
-                  <i className="fa-solid fa-arrow-right-long" />
+                  <ArrowRight size={16} weight="bold" />
                 </a>
                 <a className="btn-glass" href="/cv-alex-roblero.pdf" download="CV - Alex Roblero.pdf">
                   Download CV
-                  <i className="fa-solid fa-download" />
+                  <Download size={16} weight="bold" />
                 </a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.4}>
-              <div className="tech-stack">
-                <p className="tech-label">Technologies I Work With</p>
-                <div className="tech-icons">
-                  {TECH.map((icon) => (
-                    <div key={icon} className="tech-icon">
-                      <i className={`${icon} colored`} />
-                    </div>
-                  ))}
-                </div>
               </div>
             </Reveal>
           </div>
 
           <div className="hero-visual">
             <Reveal delay={0.2} direction="zoom">
-              <div className="hero-image-glow" />
-              <div className="hero-scene">
-                <div className="scene-particles" />
-
-                <div className="blackhole">
-                  <div className="blackhole__disc" />
-                  <div className="blackhole__lens" />
-                </div>
-
-                <div className="scene-orbit scene-orbit--outer">
-                  <span className="scene-satellite scene-satellite--react">
-                    <i className="devicon-react-original colored" />
-                  </span>
-                  <span className="scene-satellite scene-satellite--dotnet">
-                    <i className="devicon-dotnetcore-plain colored" />
-                  </span>
-                  <span className="scene-satellite scene-satellite--js">
-                    <i className="devicon-javascript-plain colored" />
-                  </span>
-                  <span className="scene-satellite scene-satellite--csharp">
-                    <i className="devicon-csharp-plain colored" />
-                  </span>
-                </div>
-
-                <div className="scene-orbit scene-orbit--inner">
-                  <span className="scene-dot scene-dot--purple" />
-                  <span className="scene-dot scene-dot--blue" />
-                </div>
-              </div>
               <div className="code-card">
                 <div className="code-dots">
                   <span className="dot-red" />

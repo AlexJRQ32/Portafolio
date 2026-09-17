@@ -10,14 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Móvil */
-@media (max-width: 768px) {
-  .page {
-    font-size: 15px;
-  }
-}
-
-/* Muy pequeño */
+/* Muy pequeno */
 @media (max-width: 400px) {
   .page {
     font-size: 14px;

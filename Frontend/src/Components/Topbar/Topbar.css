@@ -1,3 +1,7 @@
+/* ============================================================================
+ * Topbar flotante pill (navbar horizontal centrado)
+ * ============================================================================ */
+
 .topbar {
   position: fixed;
   top: 20px;
@@ -11,14 +15,14 @@
   justify-content: space-between;
   padding: 0 24px;
   color: var(--text-primary);
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(68, 71, 79, 0.5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   box-sizing: border-box;
+  box-shadow: var(--shadow-navbar);
 }
 
+/* === Logo === */
 .logo {
   display: flex;
   align-items: center;
@@ -34,16 +38,15 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: var(--gradient-primary);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  background: var(--bg-surface-highest);
+  border: 1px solid var(--border-strong);
 }
 
 .logo-icon {
-  font-size: 18px;
-  line-height: 1;
-  color: #ffffff;
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
   flex-shrink: 0;
-  transform: rotate(-20deg);
 }
 
 .logo p {
@@ -55,58 +58,35 @@
   letter-spacing: -0.025em;
 }
 
+/* === Navbar horizontal === */
 .navbar ul {
   display: flex;
   align-items: center;
   gap: 32px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-.navbar a {
+.navbar ul li a {
   display: inline-block;
   padding: 8px 0;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.4;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.navbar a:hover {
-  color: #ffffff;
-  border-bottom-color: var(--outline-variant);
+.navbar ul li a:hover {
+  color: var(--text-primary);
 }
 
-.navbar li:first-child a {
-  color: #ffffff;
-  border-bottom-color: var(--primary);
-}
-
-.btn-hire {
-  padding: 10px 20px;
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4;
-  background: var(--primary);
-  border: none;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
-}
-
-.btn-hire:hover {
-  background: var(--primary-hover);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+.navbar ul li a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* === Boton hamburguesa (oculto en desktop, visible en mobile) === */
@@ -201,46 +181,27 @@
   transition: background 0.2s, color 0.2s;
 }
 
-.mobile-menu__nav a i {
-  width: 18px;
-  font-size: 16px;
-  color: var(--primary-light);
+.mobile-menu__nav a svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
   flex-shrink: 0;
+  transition: color var(--transition-fast);
 }
 
 .mobile-menu__nav a:hover {
-  background: rgba(139, 92, 246, 0.12);
+  background: rgba(52, 211, 153, 0.08);
 }
 
-.mobile-menu__divider {
-  height: 1px;
-  margin: 4px 0;
-  background: var(--border-color);
-}
-
-.mobile-menu__cta {
-  justify-content: center;
-  padding: 12px !important;
-  background: var(--gradient-primary);
-  color: #ffffff !important;
-  font-weight: 600;
-  border-radius: var(--radius-md) !important;
-}
-
-.mobile-menu__cta i {
-  color: #ffffff !important;
-}
-
-.mobile-menu__cta:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-hover));
+.mobile-menu__nav a:hover svg {
+  color: var(--accent);
 }
 
 /* ============================================================================
  * Responsive - convencion desktop-first (max-width)
  * ============================================================================ */
 
-/* Tablet (768px): navbar links caben pero mas ajustados */
-/* Tablet (768px): ocultar navbar horizontal, mostrar hamburguesa */
+/* Tablet/Mobile (768px): ocultar navbar, mostrar hamburguesa */
 @media (max-width: 768px) {
   .topbar {
     top: 12px;
@@ -248,27 +209,41 @@
     height: 54px;
     padding: 0 14px;
   }
+
   .navbar {
     display: none;
   }
-  .btn-hire {
-    display: none;
-  }
+
   .logo p {
     font-size: 17px;
   }
+
   .logo-badge {
     width: 34px;
     height: 34px;
   }
+
   .navbar-burger {
     display: flex;
   }
 }
 
-/* Mobile (640px): ajustes finos */
+/* Mobile pequeno (640px): ajustes finos */
 @media (max-width: 640px) {
-  .navbar ul {
-    gap: 20px;
+  .topbar {
+    padding: 0 10px;
+  }
+
+  .logo p {
+    font-size: 15px;
+  }
+
+  .logo-badge {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-icon {
+    font-size: 14px;
   }
 }

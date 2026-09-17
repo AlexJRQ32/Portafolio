@@ -1,9 +1,11 @@
 import './Projects.css'
 import { Reveal } from '../ui/Reveal/Reveal'
+import { ProjectMockup } from './ProjectMockup/ProjectMockup'
+import { Globe, GithubLogo } from '@phosphor-icons/react'
 
 const PROJECTS = [
   {
-    id: "01",
+    id: "flowbank",
     title: "FlowBank",
     description:
       "Manage credit card billing and payment dates in one place. Register cards, scan invoices and get alerts before each due date.",
@@ -12,7 +14,7 @@ const PROJECTS = [
     repoUrl: "https://github.com/AlexJRQ32/FlowBank",
   },
   {
-    id: "02",
+    id: "openpaw",
     title: "OpenPaw",
     description:
       "Platform for veterinary services and pet care, built as a team using Scrum methodology and Azure DevOps.",
@@ -21,7 +23,7 @@ const PROJECTS = [
     repoUrl: "https://github.com/AlexJRQ32",
   },
   {
-    id: "03",
+    id: "rappidoz",
     title: "RappiDoz",
     description:
       "Delivery and ordering app built for the Systems Design course, with an ASP.NET and SQL Server backend.",
@@ -36,52 +38,49 @@ export function Projects() {
     <section className="projects" id="projects">
       <div className="projects-container">
         <Reveal>
-          <div className="projects-head">
-            <p className="projects-kicker">Featured Projects</p>
-            <h2 className="projects-title">Some of My Recent Work</h2>
-          </div>
+          <h2 className="projects-title">Things I've built</h2>
         </Reveal>
 
         <div className="projects-grid">
           {PROJECTS.map((p, i) => (
-            <Reveal key={p.id} delay={i * 0.1}>
-              <article className="project-card">
-              <span className="project-card__num">{p.id}</span>
+            <Reveal
+              key={p.id}
+              delay={i * 0.08}
+              direction={i === 0 ? "up" : i % 2 === 0 ? "right" : "left"}
+            >
+              <article className={`project-card${i === 0 ? " project-card--feature" : ""}`}>
+                <ProjectMockup title={p.title} />
 
-              <div className="project-card__head">
-                <div className="project-card__icon">
-                  <i className={p.stack[0] + " colored"} />
+                <div className="project-card__body">
+                  <h3 className="project-card__title">{p.title}</h3>
+                  <p className="project-card__desc">{p.description}</p>
+
+                  <div className="project-card__stack" aria-label={`${p.title} stack`}>
+                    {p.stack.map((s) => (
+                      <i key={s} className={`${s} colored project-card__stack-icon`} aria-hidden="true" />
+                    ))}
+                    {p.title === "RappiDoz" && (
+                      <svg className="project-card__stack-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill="#CC2927" d="M12 2C7 2 3 3.5 3 5.5v13C3 20.5 7 22 12 22s9-1.5 9-3.5v-13C21 3.5 17 2 12 2zm0 2c4.4 0 7 .9 7 1.5S16.4 7 12 7 5 6.1 5 5.5 7.6 4 12 4zm0 16c-4.4 0-7-.9-7-1.5V8.8C6.6 9.9 9.2 10.4 12 10.4s5.4-.5 7-1.6v9.7c0 .6-2.6 1.5-7 1.5z" />
+                      </svg>
+                    )}
+                  </div>
+
+                  <div className="project-card__links">
+                    {p.deployUrl && (
+                      <a className="project-card__link project-card__link--deploy" href={p.deployUrl} target="_blank" rel="noreferrer">
+                        Live App
+                        <Globe size={14} weight="bold" />
+                      </a>
+                    )}
+                    {p.repoUrl && (
+                      <a className="project-card__link" href={p.repoUrl} target="_blank" rel="noreferrer">
+                        {p.title === "OpenPaw" ? "GitHub" : "Repo"}
+                        <GithubLogo size={14} weight="bold" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <h3 className="project-card__title">{p.title}</h3>
-              </div>
-
-              <p className="project-card__desc">{p.description}</p>
-
-              <div className="project-card__stack">
-                {p.stack.map((s, i) => (
-                  <i key={i} className={`${s} colored project-card__stack-icon`} />
-                ))}
-                {p.title === "RappiDoz" && (
-                  <svg className="project-card__stack-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#CC2927" d="M12 2C7 2 3 3.5 3 5.5v13C3 20.5 7 22 12 22s9-1.5 9-3.5v-13C21 3.5 17 2 12 2zm0 2c4.4 0 7 .9 7 1.5S16.4 7 12 7 5 6.1 5 5.5 7.6 4 12 4zm0 16c-4.4 0-7-.9-7-1.5V8.8C6.6 9.9 9.2 10.4 12 10.4s5.4-.5 7-1.6v9.7c0 .6-2.6 1.5-7 1.5z" />
-                  </svg>
-                )}
-              </div>
-
-              <div className="project-card__links">
-                {p.deployUrl && (
-                  <a className="project-card__link project-card__link--deploy" href={p.deployUrl} target="_blank" rel="noreferrer">
-                    Live App
-                    <i className="fa-solid fa-globe" />
-                  </a>
-                )}
-                {p.repoUrl && (
-                  <a className="project-card__link" href={p.repoUrl} target="_blank" rel="noreferrer">
-                    {p.title === "OpenPaw" ? "GitHub" : "Repo"}
-                    <i className="fa-brands fa-github" />
-                  </a>
-                )}
-              </div>
               </article>
             </Reveal>
           ))}

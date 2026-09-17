@@ -1,24 +1,22 @@
 import './Contact.css'
 import { Reveal } from '../ui/Reveal/Reveal'
+import { Rocket, GithubLogo, LinkedinLogo, Envelope } from '@phosphor-icons/react'
 
 const SOCIALS = [
   {
-    id: "01",
-    icon: "fa-brands fa-github",
+    icon: GithubLogo,
     label: "GitHub",
     value: "AlexJRQ32",
     url: "https://github.com/AlexJRQ32",
   },
   {
-    id: "02",
-    icon: "fa-brands fa-linkedin-in",
+    icon: LinkedinLogo,
     label: "LinkedIn",
     value: "Alex Roblero",
     url: "https://www.linkedin.com/in/alex-roblero-297811301/",
   },
   {
-    id: "03",
-    icon: "fa-regular fa-envelope",
+    icon: Envelope,
     label: "Email",
     value: "robleroalex015@icloud.com",
     url: "mailto:robleroalex015@icloud.com",
@@ -41,7 +39,7 @@ export function Contact() {
           <Reveal direction="left">
             <div className="contact-brand">
               <div className="contact-brand__logo">
-                <i className="fa-solid fa-rocket" />
+                <Rocket size={18} weight="fill" className="contact-brand__rocket" />
                 <span>Alex Roblero</span>
               </div>
               <p className="contact-brand__tag">
@@ -64,16 +62,16 @@ export function Contact() {
 
           <Reveal delay={0.2} direction="right">
             <div className="contact-social">
-              <span className="contact-social__title">Let's connect</span>
+              <span className="contact-social__title">Find me online</span>
               {SOCIALS.map((s) => (
                 <a
-                  key={s.id}
+                  key={s.label}
                   className="contact-social__link"
                   href={s.url}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <i className={s.icon} />
+                  <s.icon size={16} weight="bold" />
                   <span>{s.value}</span>
                 </a>
               ))}
@@ -83,7 +81,7 @@ export function Contact() {
 
         <div className="contact-bottom">
           <p>© {new Date().getFullYear()} Alex Roblero. All rights reserved.</p>
-          <p>Designed &amp; developed by Alex Roblero — San José, Costa Rica</p>
+          <p>Designed &amp; built by Alex Roblero. San José, Costa Rica</p>
         </div>
       </div>
     </footer>

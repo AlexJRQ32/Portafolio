@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import './Blog.css'
 import { Reveal } from '../ui/Reveal/Reveal'
+import { CaretDown } from '@phosphor-icons/react'
 
 const POSTS = [
   {
-    id: "01",
+    id: "flowbank-react",
     tag: "Frontend",
     title: "What I learned building my first project with React",
-    readTime: "4 min",
-    color: "#61dafb",
     body: [
       "My first real approach to React was building FlowBank, an app to manage credit card billing and payment dates. Before that I only knew HTML, CSS and vanilla JavaScript, and the jump to components was bigger than I expected.",
       "The first thing I understood was the difference between props and state. Props are data the parent passes to the child (and shouldn't be mutated), while state is internal component information that changes with user interaction. Mixing them up at first creates confusing bugs: a component that receives data via props and modifies it directly never behaves the way you expect.",
@@ -17,11 +16,9 @@ const POSTS = [
     ],
   },
   {
-    id: "02",
+    id: "dotnet-layers",
     tag: "Backend",
     title: "Understanding layers in a .NET API",
-    readTime: "6 min",
-    color: "#512bd4",
     body: [
       "When I started with .NET, my instinct was to put everything in the controller: validation, data access, business rules. The result was code that was impossible to test and maintain. The solution was understanding layered architecture.",
       "I split the project into three: Core, Data and WebAPI. Core contains the domain entities (like Card or Invoice) and pure business rules, without knowing anything about databases. Data handles data access with Entity Framework Core: the DbContext, repositories and migrations. WebAPI exposes the HTTP endpoints and communicates with the inner layers.",
@@ -30,11 +27,9 @@ const POSTS = [
     ],
   },
   {
-    id: "03",
+    id: "data-modeling",
     tag: "Databases",
     title: "Data modeling: from idea to diagram",
-    readTime: "5 min",
-    color: "#cc2927",
     body: [
       "Data modeling is the foundation of any application, and learning to do it well saved me tons of hours of fixing things later. The process starts before writing SQL: it's about understanding what entities exist and how they relate.",
       "For OpenPaw, the pet card, I started by listing the entities: User, Pet, Species, Breed, Service, Review. Then I defined the relationships: a user has many pets, a pet belongs to a species and a breed, a service belongs to a user and can have many reviews.",
@@ -49,10 +44,7 @@ function Post({ post }) {
 
   return (
     <article className={`blog-card${open ? " blog-card--open" : ""}`}>
-      <span className="blog-card__num">{post.id}</span>
-      <div className="blog-card__tag" style={{ color: post.color }}>
-        {post.tag}
-      </div>
+      <div className="blog-card__tag">{post.tag}</div>
       <h3 className="blog-card__title">{post.title}</h3>
       <p className="blog-card__excerpt">{post.body[0]}</p>
 
@@ -63,7 +55,6 @@ function Post({ post }) {
       </div>
 
       <div className="blog-card__meta">
-        <span>{post.readTime} read</span>
         <button
           type="button"
           className="blog-card__toggle"
@@ -71,7 +62,7 @@ function Post({ post }) {
           aria-expanded={open}
         >
           {open ? "Read less" : "Read more"}
-          <i className={`fa-solid fa-chevron-down${open ? " blog-card__toggle--open" : ""}`} />
+          <CaretDown size={12} weight="bold" className={`blog-card__toggle-icon${open ? " blog-card__toggle--open" : ""}`} />
         </button>
       </div>
     </article>
@@ -83,15 +74,12 @@ export function Blog() {
     <section className="blog" id="blog">
       <div className="blog-container">
         <Reveal>
-          <div className="blog-head">
-            <p className="blog-kicker">Blog</p>
-            <h2 className="blog-title">Notes From My Learning</h2>
-          </div>
+          <h2 className="blog-title">Writing about what I learn</h2>
         </Reveal>
 
         <div className="blog-grid">
           {POSTS.map((p, i) => (
-            <Reveal key={p.id} delay={i * 0.1}>
+            <Reveal key={p.id} delay={i * 0.08}>
               <Post post={p} />
             </Reveal>
           ))}

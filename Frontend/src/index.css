@@ -1,149 +1,49 @@
 :root {
   /* =============================================
-     Portafolio Alex - Obsidian Flux (colores)
-     Estilo FlowBank (layout/navbar/tipografía)
-     Dark-first · Glassmorphism · Serif + Sans
+     Portafolio Alex - Nordic (colores desde Figma Proyecto-Portafolio)
+     Fondos azulados oscuros + acento melocoton/terracota
+     Jerarquia por luminosidad y temperatura cálida
      ============================================= */
 
-  /* Canvas y Fondos */
-  --bg-canvas: #0b0b0f;
-  --bg-canvas-rgb: 11, 11, 15;
-  --bg-primary: #131317;
-  --bg-primary-rgb: 19, 19, 23;
-  --bg-card: #1f1f23;
-  --bg-card-rgb: 31, 31, 35;
-  --bg-card-hover: #2a2a2e;
-  --bg-card-hover-rgb: 42, 42, 46;
-  --bg-surface-lowest: #0e0e12;
-  --bg-surface-lowest-rgb: 14, 14, 18;
-  --bg-surface-low: #1b1b1f;
-  --bg-surface-low-rgb: 27, 27, 31;
-  --bg-surface-highest: #353439;
-  --bg-surface-highest-rgb: 53, 52, 57;
-  --bg-bright: #39393d;
-  --bg-bright-rgb: 57, 57, 61;
+  /* Canvas y Fondos (negros azulados, nunca #000 puro) */
+  --bg-canvas: #0C0E10;
+  --bg-primary: #121416;
+  --bg-card: #1E2022;
+  --bg-card-hover: #282A2C;
+  --bg-surface-lowest: #0C0E10;
+  --bg-surface-low: #1A1C1E;
+  --bg-surface-highest: #333537;
+  --bg-bright: #37393B;
 
-  /* Primary (Electric Violet) */
-  --primary: #8b5cf6;
-  --primary-rgb: 139, 92, 246;
-  --primary-hover: #7c4df0;
-  --primary-hover-rgb: 124, 77, 240;
-  --primary-container: #a078ff;
-  --primary-container-rgb: 160, 120, 255;
-  --primary-light: #a78bfa;
-  --primary-light-rgb: 167, 139, 250;
-  --on-primary: #3c0091;
-  --on-primary-rgb: 60, 0, 145;
-  --on-primary-container: #340080;
-  --on-primary-container-rgb: 52, 0, 128;
+  /* Acento: melocoton/terracota (tema Nordic) */
+  --accent: #F2BE8C;
+  --accent-light: #FFD6B0;
+  --accent-mid: #E29578;
+  --accent-strong: #2C1600;
+  --accent-strong-hover: #4A2A10;
 
-  /* Secondary (Azure Blue) */
-  --secondary: #3b82f6;
-  --secondary-rgb: 59, 130, 246;
-  --secondary-container: #0566d9;
-  --secondary-container-rgb: 5, 102, 217;
-  --on-secondary: #002e6a;
-  --on-secondary-rgb: 0, 46, 106;
-  --on-secondary-container: #e6ecff;
-  --on-secondary-container-rgb: 230, 236, 255;
+  /* Textos (crema/gris claro, jerarquia por temperatura) */
+  --text-primary: #D4C4B7;
+  --text-secondary: #E2E2E5;
+  --text-muted: #A8988A;
+  --text-disabled: #37393B;
 
-  /* Tertiary (Cyan) */
-  --tertiary: #06b6d4;
-  --tertiary-rgb: 6, 182, 212;
-  --tertiary-container: #009eb9;
-  --tertiary-container-rgb: 0, 158, 185;
-  --on-tertiary: #003640;
-  --on-tertiary-rgb: 0, 54, 64;
-  --on-tertiary-container: #002f38;
-  --on-tertiary-container-rgb: 0, 47, 56;
+  /* Bordes y Outlines (grises oscuros) */
+  --border-color: #282A2C;
+  --border-strong: #37393B;
+  --outline-variant: #333537;
 
-  /* Textos */
-  --text-primary: #e3e2e6;
-  --text-primary-rgb: 227, 226, 230;
-  --text-secondary: #c4c6d0;
-  --text-secondary-rgb: 196, 198, 208;
-  --text-muted: #8e9099;
-  --text-muted-rgb: 142, 144, 153;
-  --text-disabled: #44474f;
-  --text-disabled-rgb: 68, 71, 79;
+  /* Estados (rosados suaves, estilo Material tonal) */
+  --error: #FFB4AB;
+  --error-container: #44251D;
+  --on-error: #44251D;
+  --on-error-container: #FFB3C1;
 
-  /* Bordes y Outlines */
-  --border-color: #44474f;
-  --border-color-rgb: 68, 71, 79;
-  --border-strong: #8e9099;
-  --border-strong-rgb: 142, 144, 153;
-  --outline-variant: #494454;
-  --outline-variant-rgb: 73, 68, 84;
+  /* Sombras (solo neutras y tenues) */
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-navbar: 0 4px 20px rgba(0, 0, 0, 0.25);
 
-  /* Estados */
-  --error: #ffb4ab;
-  --error-rgb: 255, 180, 171;
-  --error-container: #93000a;
-  --error-container-rgb: 147, 0, 10;
-  --on-error: #690005;
-  --on-error-rgb: 105, 0, 5;
-  --on-error-container: #ffdad6;
-  --on-error-container-rgb: 255, 218, 214;
-
-  /* Acentos de Estadísticas */
-  --accent-purple: #8b5cf6;
-  --accent-purple-rgb: 139, 92, 246;
-  --accent-blue: #3b82f6;
-  --accent-blue-rgb: 59, 130, 246;
-  --accent-green: #10b981;
-  --accent-green-rgb: 16, 185, 129;
-  --accent-yellow: #f59e0b;
-  --accent-yellow-rgb: 245, 158, 11;
-
-  /* Tokens Material (Ref. Obsidian Flux) */
-  --ref-primary: #d0bcff;
-  --ref-primary-rgb: 208, 188, 255;
-  --ref-primary-fixed: #e9ddff;
-  --ref-primary-fixed-rgb: 233, 221, 255;
-  --ref-inverse-primary: #6d3bd7;
-  --ref-inverse-primary-rgb: 109, 59, 215;
-  --ref-secondary: #adc6ff;
-  --ref-secondary-rgb: 173, 198, 255;
-  --ref-secondary-fixed: #d8e2ff;
-  --ref-secondary-fixed-rgb: 216, 226, 255;
-  --ref-tertiary: #4cd7f6;
-  --ref-tertiary-rgb: 76, 215, 246;
-  --ref-tertiary-fixed: #acedff;
-  --ref-tertiary-fixed-rgb: 172, 237, 255;
-  --ref-inverse-surface: #e4e1e7;
-  --ref-inverse-surface-rgb: 228, 225, 231;
-  --ref-inverse-on-surface: #303034;
-  --ref-inverse-on-surface-rgb: 48, 48, 52;
-  --ref-surface-tint: #d0bcff;
-  --ref-surface-tint-rgb: 208, 188, 255;
-  --ref-outline: #958ea0;
-  --ref-outline-rgb: 149, 142, 160;
-
-  /* Glassmorphism */
-  --glass-bg: rgba(31, 31, 35, 0.6);
-  --glass-border: rgba(68, 71, 79, 0.5);
-  --glass-blur: 12px;
-  --glass-card-bg: rgba(255, 255, 255, 0.03);
-  --glass-card-border: rgba(255, 255, 255, 0.1);
-  --glass-navbar: rgba(31, 31, 35, 0.6);
-
-  /* Gradientes */
-  --gradient-text: linear-gradient(to right, #a78bfa, #8b5cf6);
-  --gradient-primary: linear-gradient(45deg, #8b5cf6, #3b82f6);
-  --gradient-hero-glow: radial-gradient(circle at center, rgba(139, 92, 246, 0.2) 0%, rgba(19, 19, 23, 0) 70%);
-  --gradient-border: linear-gradient(to bottom, rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0));
-  --gradient-orb-primary: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 70%);
-  --gradient-orb-secondary: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
-
-  /* Sombras y Glows */
-  --glow-purple: rgba(124, 92, 255, 0.15);
-  --glow-primary: 0 0 20px rgba(139, 92, 246, 0.4);
-  --glow-primary-soft: 0 0 15px rgba(139, 92, 246, 0.3);
-  --glow-text: 0 0 20px rgba(139, 92, 246, 0.5);
-  --shadow-soft: 0 0 20px rgba(0, 0, 0, 0.12);
-  --shadow-navbar: 0 4px 20px rgba(0, 0, 0, 0.1);
-
-  /* Radios */
+  /* Radios - Shape Lock: cards 16px, inputs/iconos 12px, interactive full */
   --radius-sm: 0.25rem;
   --radius-base: 0.5rem;
   --radius-md: 0.75rem;
@@ -206,3 +106,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Focus visible global: anillo melocoton consistente */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
